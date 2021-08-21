@@ -58,7 +58,7 @@ function promoCode(){
     if(promoValue == 'stevekaku'){
         const pomoCalculation = (parseInt(total.innerText) * 20) / 100;
         total.innerText = parseInt(total.innerText) - pomoCalculation;
-        pomoInput.value = '';
+        promoInput.value = '';
     }else{
         alert('Please Enter Correct Pomo Code')
     }
