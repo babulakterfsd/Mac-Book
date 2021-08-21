@@ -1,9 +1,9 @@
+//all target html elements
 const bestPrice = document.getElementById('best-price');
 const memoryCost = document.getElementById('extra-memory-cost');
 const storageCost = document.getElementById('extra-storage-cost');
 const deliveryCharge = document.getElementById('delivery-charge');
 const allCost = document.getElementById('total-price');
-const discountButton = document.getElementById('discountButton');
 const discountedTotal = document.getElementById('total-with-discount');
 
 
@@ -19,13 +19,13 @@ function updateTotalPrice(){
 document.getElementById('free-memory').addEventListener('click',function(){
     memoryCost.innerText = '0';
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 document.getElementById('cost-memory').addEventListener('click',function(){
     memoryCost.innerText = '180';
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 
@@ -33,19 +33,19 @@ document.getElementById('cost-memory').addEventListener('click',function(){
 document.getElementById('ssd-256gb').addEventListener('click',function(){
     storageCost.innerText = '0'
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 document.getElementById('ssd-512gb').addEventListener('click',function(){
     storageCost.innerText = '100'
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 document.getElementById('ssd-1tb').addEventListener('click',function(){
     storageCost.innerText = '180'
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 
@@ -53,36 +53,31 @@ document.getElementById('ssd-1tb').addEventListener('click',function(){
 document.getElementById('free-delivery').addEventListener('click',function(){
     deliveryCharge.innerText = '0';
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 document.getElementById('cost-delivery').addEventListener('click',function(){
     deliveryCharge.innerText = '20';
     updateTotalPrice();
-    totalWithDiscount();
+    grandTotalWithDiscount();
 })
 
 
-//total price without discount
-function totalWithDiscount() {
+// Function for updating Grand Total price without discount
+function grandTotalWithDiscount() {
    discountedTotal.innerText = updateTotalPrice()
 }
 
 
-// total with discount
-const userInput = document.getElementById('discount');
-const targetButton = document.getElementById('discountButton');
-
-userInput.addEventListener('keyup', (event) => {
-    console.log(event.target.value);
-    if(event.target.value == 'stevekaku') {
-        targetButton.removeAttribute('disabled');
-        targetButton.addEventListener('click', function() {
-            const discountRate = (updateTotalPrice() / 100) * 20;
-            discountedTotal.innerText = updateTotalPrice() - discountRate;
-        })
-    } else {
-        targetButton.setAttribute('disabled', true);
-        discountedTotal.innerText = updateTotalPrice()
+//Grand total with discount
+function promoCode(){
+    const promoCode = document.getElementById('promocode');
+    const promoValue = promoCode.value;
+    if(promoValue == 'stevekaku'){
+        const discountRate = (updateTotalPrice() / 100) * 20;
+        discountedTotal.innerText = updateTotalPrice() - discountRate;
+        promoCode.value = '';
+    }else{
+        alert('Please Enter Correct Promo Code')
     }
-})
+}
