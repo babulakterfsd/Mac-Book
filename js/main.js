@@ -1,12 +1,13 @@
 // Global Variables
 const bestPrice = document.getElementById('best-price');
+
 const memoryCost = document.getElementById('extra-memory-cost');
 const storageCost = document.getElementById('extra-storage-cost');
 const deliveryCharge = document.getElementById('delivery-charge');
+
 const allCost = document.getElementById('total-price');
 const total = document.getElementById('total');
 const promoInput = document.getElementById('promo-input');
-const applyButton = document.getElementById('applyButton');
 
 
 // function for Total Price 
@@ -53,7 +54,7 @@ deliveryCostCalc('free-delivery', '0');
 deliveryCostCalc('cost-delivery', '20');
 
 
-// total calculation with pomo code
+// total calculation with promo code
 function promoCode(){
     const promoValue = promoInput.value;
     if(promoValue == 'stevekaku'){
