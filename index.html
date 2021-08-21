@@ -17,7 +17,7 @@
     <meta name="robots" content="index, follow">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./images/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/fav.png">
 
     <!-- bootstrap style cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -42,17 +42,20 @@
                         <h1>Customize your Blue 24-inch iMac with Apple M1 chip</h1>
                         <p>Apple M1 chip with 8-core CPU with performance cores and 4 efficiency cores, 7-core GPU,and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB4 ports Mouse Magic Keyboard - US English.</p>
                     </div>
+                    <!-- Memory Selection  -->
                     <div class="my-5">
                         <h3>Memory</h3>
                         <button id="free-memory" class="btn btn-outline-secondary">8GB unified memory</button>
                         <button id="cost-memory" class="btn btn-outline-secondary">16GB unified memory</button>
                     </div>
+                    <!-- Storage Selection -->
                     <div class="my-5">
                         <h3>Storage</h3>
                         <button id="ssd-256gb" class="btn btn-outline-secondary">256GB SSD storage</button>
                         <button id="ssd-512gb" class="btn btn-outline-secondary">512GB SSD storage</button>
                         <button id="ssd-1tb" class="btn btn-outline-secondary">1Tb SSD storage</button>
                     </div>
+                    <!-- Delivery Charge Selection -->
                     <div class="my-5">
                         <h3>Choose your delivery option</h3>
                         <button id="free-delivery" class="btn btn-outline-secondary">Friday,Aug 25 FREE Prime Delivery</button>
@@ -86,15 +89,17 @@
                             </tfoot>
                         </table>
                     </div>
+                    <!-- Apply Promo Code  -->
                     <div>
-                        <h3 class="my-3">Add Pomo Code</h3>
-                        <input id="pomo-input" class="p-1" type="text" placeholder="Pomo Code(stevekaku)">
-                        <button onclick="promoCode()" class="btn btn-danger py-2 px-4">Apply</button>
+                        <h3 class="my-3">Add Promo Code</h3>
+                        <input id="promo-input" class="p-1" type="text" placeholder="type 'stevekaku'">
+                        <button id="applyButton" onclick="promoCode()" class="btn btn-danger py-2 px-4">Apply</button>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
+        <!-- Payable Total Bill  -->
         <div class="container text-center">
             <h2>Total : $<span id="total">1299</span></h2>
         </div>
